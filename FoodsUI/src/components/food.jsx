@@ -3,8 +3,11 @@ import axios from 'axios';
 // import { Link } from 'react-router-dom';
 import './food.css';
 import {NavLink} from "react-router-dom"
+import { Navbar } from './navbar/header';
+import { End } from './footer/footer';
 
 const RecipePage = () => {
+  
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -25,6 +28,8 @@ const RecipePage = () => {
   }, []);
 
   return (
+    <>
+    <Navbar/>
     <div className='mainContainer'>
       {loading ? (
         <p>Loading...</p>
@@ -44,6 +49,8 @@ const RecipePage = () => {
         ))
       )}
     </div>
+    <End/>
+    </>
   );
 };
 
